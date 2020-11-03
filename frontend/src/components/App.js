@@ -7,8 +7,11 @@ import SeatSelect from "./SeatSelect";
 import Confirmation from "./Confirmation";
 import GlobalStyles, { themeVars } from "./GlobalStyles";
 
+const initialState = { seat: "", givenName: "", surname: "", email: "" };
 const App = () => {
   const [userReservation, setUserReservation] = useState({});
+  const [formData, setFormData] = useState(initialState);
+
 
   const updateUserReservation = (newData) => {
     setUserReservation({ ...userReservation, ...newData });
@@ -26,10 +29,10 @@ const App = () => {
       <Main>
         <Switch>
           <Route exact path="/">
-            <SeatSelect />
+            <SeatSelect formData={formData} setFormData={setFormData} />
           </Route>
           <Route exact path="/confirmed">
-            <Confirmation />
+            <Confirmation form={formData} />
           </Route>
           <Route path="">404: Oops!</Route>
         </Switch>
@@ -43,7 +46,7 @@ const Main = styled.div`
   background: ${themeVars.background};
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 110px);
+  height: auto;
 `;
 
 export default App;

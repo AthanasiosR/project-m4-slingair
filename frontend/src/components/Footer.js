@@ -13,7 +13,7 @@ const Footer = () => (
 
 const Wrapper = styled.div`
   display: flex;
-  margin: auto auto 24px;
+  margin: 50px auto 50px;
   height: 60px;
 
   p {

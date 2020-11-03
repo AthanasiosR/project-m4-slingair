@@ -13,8 +13,10 @@ const Header = () => (
     <Nav>
       {/* TODO: only show links if the user has a reservation already */}
       <>
-        <StyledNavLink to="/view-reservation">Reservation</StyledNavLink>
-        <StyledNavLink to="/profile">Profile</StyledNavLink>
+          <StyledNavLink to="/view-reservation">Reservation</StyledNavLink>
+          <StyledNavLink to="/profile">Profile</StyledNavLink>
+
+        
       </>
     </Nav>
   </Wrapper>
